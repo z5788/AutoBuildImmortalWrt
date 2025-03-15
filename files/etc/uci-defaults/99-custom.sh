@@ -38,7 +38,7 @@ ifnames=$(echo "$ifnames" | awk '{$1=$1};1')
 
    # 单网口设备 类似于NAS模式 动态获取ip模式 具体ip地址取决于上一级路由器给它分配的ip 也方便后续你使用web页面设置旁路由
    # 单网口设备 不支持修改ip 不要在此处修改ip 
-   uci set network.lan.proto='dhcp'
+uci set network.lan.proto='dhcp'
 
 
 # 设置所有网口可访问网页终端
