@@ -34,12 +34,11 @@ done
 # 删除多余空格
 ifnames=$(echo "$ifnames" | awk '{$1=$1};1')
 
-# 网络设置
-if [ "$count" -gt 1 ]; then
+# 网络设置 直接设定为DHCP 不管单多网口,防止在虚拟机下做旁路的烦恼
+
    # 单网口设备 类似于NAS模式 动态获取ip模式 具体ip地址取决于上一级路由器给它分配的ip 也方便后续你使用web页面设置旁路由
    # 单网口设备 不支持修改ip 不要在此处修改ip 
    uci set network.lan.proto='dhcp'
-fi
 
 
 # 设置所有网口可访问网页终端
